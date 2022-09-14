@@ -17,7 +17,7 @@ async function userLoged(req, res, next) {
     }
     const user = await db
       .collection("users")
-      .findOne({ userId: session.userId });
+      .findOne({ _id: session.userID });
 
     if (!user) {
       return res.sendStatus(404);
